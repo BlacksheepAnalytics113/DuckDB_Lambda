@@ -32,6 +32,7 @@ graph TD
     J --> D
     K --> D
     H --> L[Grafana / Alerting]
+    style CI/CD & Ops fill:#f9f,stroke:#333,stroke-width:2px 
 
 ---
 
