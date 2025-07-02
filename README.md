@@ -14,6 +14,9 @@ That single paragraph is the fence-line for everything that follows.
 
 ## Pipeline Architecture Diagram
 
+
+## Pipeline Architecture Diagram
+
 ```mermaid
 flowchart TD
     A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
@@ -25,7 +28,7 @@ flowchart TD
     F --> G
     D --> H[Monitoring & Alerts]
     E --> H
-    subgraph CI/CD & Ops
+    subgraph "CI/CD & Ops"
       I[Docker Compose / Kubernetes]
       J[Integration Tests]
       K[Backups & Snapshots]
@@ -34,7 +37,21 @@ flowchart TD
     J --> D
     K --> D
     H --> L[Grafana / Alerting]
+
 ```
+
+**Instructions:**
+- Make sure there is a blank line before and after the code block.
+- The code block should start with three backticks and `mermaid` (no extra spaces).
+- Paste this directly into your markdown file.
+
+**If you still get an error:**  
+- Make sure your markdown viewer/editor supports Mermaid diagrams (GitHub, GitLab, Obsidian, VS Code with the Mermaid plugin, etc.).
+- If you want a left-to-right flow, change `flowchart TD` to `flowchart LR`.
+
+Let me know if you need a horizontal version or a static image!
+
+
 ```
 
 **How to use:**
