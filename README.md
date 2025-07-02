@@ -284,7 +284,7 @@ CREATE TABLE IF NOT EXISTS blockchain_solana.trades ON CLUSTER `server-apex` (
   `post_destination_balance` Decimal(20, 9),
   
   -- Swap Information: Core details of the asset exchange.
-  `market` String,
+  market String,
   `dex` String,
   `source_mint` String,
   `destination_mint` String,
