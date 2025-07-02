@@ -13,27 +13,26 @@
 That single paragraph is the fence-line for everything that follows.
 
 ## Pipeline Architecture Diagram
-```mermaid
-flowchart TD
-    A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
-    B --> C[NATS Streaming]
-    C --> D[ClickHouse Landing Tables]
-    D --> E[Materialized Views]
-    D --> F[Dictionaries]
-    E --> G[API / UI]
+
+```flowchart TD
+    A["Solana RPC/WebSocket"] --> B["Ingest Service (Rust)"]
+    B --> C["NATS Streaming"]
+    C --> D["ClickHouse Landing Tables"]
+    D --> E["Materialized Views"]
+    D --> F["Dictionaries"]
+    E --> G["API / UI"]
     F --> G
-    D --> H[Monitoring & Alerts]
+    D --> H["Monitoring & Alerts"]
     E --> H
     subgraph CI_CD_Ops["CI/CD & Ops"]
-        I[Docker Compose / Kubernetes]
-        J[Integration Tests]
-        K[Backups & Snapshots]
+        I["Docker Compose / Kubernetes"]
+        J["Integration Tests"]
+        K["Backups & Snapshots"]
     end
     I --> B
     J --> D
     K --> D
-    H --> L[Grafana / Alerting]
-```
+    H --> L["Grafana / Alerting"]
 ```
 
 
