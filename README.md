@@ -13,9 +13,6 @@
 That single paragraph is the fence-line for everything that follows.
 
 ## Pipeline Architecture Diagram
-
-
-
 flowchart TD
     A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
     B --> C[NATS Streaming]
@@ -27,14 +24,16 @@ flowchart TD
     D --> H[Monitoring & Alerts]
     E --> H
     subgraph CI_CD_Ops["CI/CD & Ops"]
-      I[Docker Compose / Kubernetes]
-      J[Integration Tests]
-      K[Backups & Snapshots]
+        I[Docker Compose / Kubernetes]
+        J[Integration Tests]
+        K[Backups & Snapshots]
     end
     I --> B
     J --> D
     K --> D
     H --> L[Grafana / Alerting]
+
+
 
 
 **Instructions:**
