@@ -12,28 +12,38 @@
 
 That single paragraph is the fence-line for everything that follows.
 
+## Pipeline Architecture Diagram
 
-graph TD
-    Solana RPC/WebSocket
-        |
-        v
-Ingest Service (Rust)
-        |
-        v
-   NATS Streaming
-        |
-        v
-ClickHouse Landing Tables
-        |
-        +-------------------+
-        |                   |
-        v                   v
-Materialized Views      Dictionaries
-        |                   |
-        +---------+---------+
-                  |
-                  v
-               API/UI
+```mermaid
+flowchart TD
+    A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
+    B --> C[NATS Streaming]
+    C --> D[ClickHouse Landing Tables]
+    D --> E[Materialized Views]
+    D --> F[Dictionaries]
+    E --> G[API / UI]
+    F --> G
+    D --> H[Monitoring & Alerts]
+    E --> H
+    subgraph CI/CD & Ops
+      I[Docker Compose / Kubernetes]
+      J[Integration Tests]
+      K[Backups & Snapshots]
+    end
+    I --> B
+    J --> D
+    K --> D
+    H --> L[Grafana / Alerting]
+```
+```
+
+**How to use:**
+- Paste the above block directly into your markdown file (e.g., `README.md`).
+- Make sure your markdown renderer supports Mermaid diagrams (GitHub, GitLab, and many local markdown tools do).
+
+**If you want a left-to-right (horizontal) flow instead of top-down, change `flowchart TD` to `flowchart LR`.**
+
+Let me know if you want a horizontal version or a PNG/SVG export!
 
 ---
 
