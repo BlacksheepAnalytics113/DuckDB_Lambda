@@ -15,7 +15,7 @@ That single paragraph is the fence-line for everything that follows.
 ## Pipeline Architecture Diagram
 
 
-## Pipeline Architecture Diagram
+
 
 ```mermaid
 flowchart TD
