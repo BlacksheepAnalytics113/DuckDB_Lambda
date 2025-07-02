@@ -13,6 +13,7 @@
 That single paragraph is the fence-line for everything that follows.
 
 ## Pipeline Architecture Diagram
+```mermaid
 flowchart TD
     A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
     B --> C[NATS Streaming]
@@ -32,6 +33,8 @@ flowchart TD
     J --> D
     K --> D
     H --> L[Grafana / Alerting]
+```
+```
 
 
 
