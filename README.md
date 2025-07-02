@@ -14,7 +14,8 @@ That single paragraph is the fence-line for everything that follows.
 
 ## Pipeline Architecture Diagram
 
-```flowchart TD
+```mermaid
+flowchart TD
     A["Solana RPC/WebSocket"] --> B["Ingest Service (Rust)"]
     B --> C["NATS Streaming"]
     C --> D["ClickHouse Landing Tables"]
