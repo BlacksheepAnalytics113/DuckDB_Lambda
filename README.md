@@ -12,6 +12,27 @@
 
 That single paragraph is the fence-line for everything that follows.
 
+
+graph TD
+    A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
+    B --> C[NATS Streaming]
+    C --> D[ClickHouse Landing Tables]
+    D --> E[Materialized Views]
+    D --> F[Dictionaries]
+    E --> G[API / UI]
+    F --> G
+    D --> H[Monitoring & Alerts]
+    E --> H
+    subgraph CI/CD & Ops
+      I[Docker Compose / Kubernetes]
+      J[Integration Tests]
+      K[Backups & Snapshots]
+    end
+    I --> B
+    J --> D
+    K --> D
+    H --> L[Grafana / Alerting]
+
 ---
 
 ### 1.2 Breaking Down What This Really Means for Us
