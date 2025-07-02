@@ -16,8 +16,6 @@ That single paragraph is the fence-line for everything that follows.
 
 
 
-
-```mermaid
 flowchart TD
     A[Solana RPC/WebSocket] --> B[Ingest Service (Rust)]
     B --> C[NATS Streaming]
@@ -28,7 +26,7 @@ flowchart TD
     F --> G
     D --> H[Monitoring & Alerts]
     E --> H
-    subgraph "CI/CD & Ops"
+    subgraph CI_CD_Ops["CI/CD & Ops"]
       I[Docker Compose / Kubernetes]
       J[Integration Tests]
       K[Backups & Snapshots]
@@ -38,7 +36,6 @@ flowchart TD
     K --> D
     H --> L[Grafana / Alerting]
 
-```
 
 **Instructions:**
 - Make sure there is a blank line before and after the code block.
